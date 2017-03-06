@@ -1,6 +1,6 @@
 #include <iostream>
 #include <stdio.h>
-#include <sys/types.h>          /* See NOTES */
+#include <sys/types.h>  /* See NOTES */
 #include <sys/socket.h>
 #include <arpa/inet.h>   //htons
 #include <netinet/in.h>  //structs socketaddr_in
@@ -29,7 +29,7 @@ int main(){
 	server.sin_family = AF_INET;
 	server.sin_port = htons(PORT);
 	server.sin_addr.s_addr = INADDR_ANY;
-	bzero(server.sin_zero, 8);
+	bzero(server.sin_zero, 8); /*Advise for standar posix */
 	int r = bind(server_code, (struct sockaddr *)&server, size); 
 	if (r == ERROR){
 		cerr << "error in binding";
