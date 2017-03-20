@@ -5,7 +5,7 @@
 #include <sys/types.h> //shmat
 #include <unistd.h> // pid_t, fork
 #include <iostream>
-#include "controller.cpp"
+
 #define four 4.0
 #define n 3000
 #define LOC 123
