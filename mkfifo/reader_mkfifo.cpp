@@ -5,7 +5,7 @@
 #include <unistd.h>
 
 #define MAX_BUF 1024
-
+#define ERROR -1
 
 using namespace std;
 
@@ -23,7 +23,8 @@ int main(){
 
     }while(fd == -1);
 
-    read(fd, buf, MAX_BUF);
+    int r = read(fd, buf, MAX_BUF);
+    if(r == ERROR) printf("Woops there was a problem.");
     printf("Received: %s\n", buf);
     close(fd);
 

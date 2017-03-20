@@ -1,13 +1,16 @@
-#include <iostream>
+#include <stdio.h>
+#include <string>
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <unistd.h>
 
+#define ERROR -1
+
 using namespace std;
 
 int main(){
-    int fd;
+    int fd, r;
     string aux =  "/tmp/myfifo";
     char * myfifo = (char*)aux.c_str();
 
@@ -16,7 +19,8 @@ int main(){
 
     /* write "Hi" to the FIFO */
     fd = open(myfifo, O_WRONLY);
-    write(fd, "Hi", sizeof("Hi"));
+    r = write(fd, "Hi", sizeof("Hi"));
+    if(r == ERROR) printf("Woops, there was a problem in write.");
     close(fd);
 
     /* remove the FIFO */
