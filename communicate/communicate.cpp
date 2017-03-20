@@ -5,6 +5,7 @@
 #define n 3000
 #define four 4.0
 #define sleeptime 1000 //in microseconds
+#define ERROR -1
 
 using namespace std;
 
@@ -47,8 +48,10 @@ inline bool file_exist(){
 
 inline void read_file(double calc){
     data = fopen("data.txt", "r");
-    double result; 
-    fread(&result,sizeof(double),1,data);
+    double result;
+    int r;
+    r = fread(&result,sizeof(double),1,data);
+    if (r == ERROR) perror("Woops, fread failed");
     cout << "The data that was readen was " << result << endl;
     cout << "The current data is " << calc << endl;
     printf( "The result is %f\n", calc- result );
