@@ -26,6 +26,9 @@ int main(){
     client.sin_family = AF_INET;
 	client.sin_port = htons(PORT);
 	client.sin_addr.s_addr = inet_addr ("127.0.0.1");
+
+    /* THis is use as a padding to make the structure of the same
+        size as sockaddr */
     bzero(client.sin_zero, 8); /*Advise for standar posix */
 
     socklen_t size;
