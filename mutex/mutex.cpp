@@ -2,8 +2,18 @@
 #include <stdlib.h>
 #include <pthread.h>
 #include <unistd.h>
+#include <mutex>
 #define MAX_PROCESOS 1
 #define NUM_HILOS 8
+using namespace std;
+
+/*
+ * Compile in this way
+ *   g++ -std=c++11 -pthread mutex.cpp
+ */
+
+mutex mtx; 
+
 
 struct datos_tipo{
     int dato;
@@ -11,7 +21,7 @@ struct datos_tipo{
 };
 
 void* proceso(void* datos){
-
+    mtx.lock();
     datos_tipo* datos_proceso;
     datos_proceso = (struct datos_tipo*)datos;
     int a, i, j, p;
@@ -28,6 +38,8 @@ void* proceso(void* datos){
         printf("- ");
     }
     fflush(stdout);
+
+    mtx.unlock();
 }
 
 int main(){
