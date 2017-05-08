@@ -6,11 +6,15 @@
 #include <unistd.h>
 #include <stdio.h>
 #define SUCCESS 0
-#define THREADS 8
+#define THREADS 3
+#define NUM_CLIENTS_SAME_TIME 1
 #define forn(x) for (int i =0; i< x; i++)
 
-#define SNAME "/mysem"
+#define SNAME "/mysem2"
 
+/*
+ *  Run with the flag -pthread
+ */ 
 
 using namespace std;
 
@@ -20,10 +24,12 @@ void * function (void *ap){
     sem_wait(sem);
 
     double val= 0;
-    cout << "hello world, upsi " << *(int*)ap ;
+    int code =  *(int*)ap ;
+    cout << "hello world, upsi " << code << " ";
     fflush(stdout);
     sleep(1);
-    cout << "ḧello 2 *--- "  << endl;
+    cout << "ḧello  *--- "  << endl;
+
     sem_post(sem);
 
 }
@@ -46,7 +52,7 @@ void create_threads(){
 
 int main (){
     
-    sem = sem_open(SNAME, O_CREAT, 0644,1);
+    sem = sem_open(SNAME, O_CREAT, 0644, NUM_CLIENTS_SAME_TIME );
 
     create_threads();
 

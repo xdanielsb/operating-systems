@@ -14,7 +14,6 @@
 
 using namespace std;
 
-
 int main(){
     int clientfd, r;
     struct sockaddr_in client;
@@ -23,6 +22,7 @@ int main(){
     if(clientfd == ERROR) {
         perror("Woops, there was an error creating the socket...") ;
     }
+
     client.sin_family = AF_INET;
 	client.sin_port = htons(PORT);
 	client.sin_addr.s_addr = inet_addr ("127.0.0.1");
@@ -43,7 +43,5 @@ int main(){
         //Re send;
     }
     close(clientfd);
-
-
     return 0;
 }
