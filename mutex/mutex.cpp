@@ -10,6 +10,7 @@ using namespace std;
 /*
  * Compile in this way
  *   g++ -std=c++11 -pthread mutex.cpp
+ *   A MUTEX IS REALLY A SEMAPHORE WITH VALUE 1
  */
 
 mutex mtx; 
