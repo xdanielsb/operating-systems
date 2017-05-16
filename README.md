@@ -14,18 +14,15 @@ Follow the next steps
 
 ```sh
 $ git clone name_repository
-$ cd name_repository/server
-$ make 
+$ cd name_repository/name_topic
+$ g++ -std=c++11 name_code.cpp
 
-Open another terminal
+In case using threads use this code, "The specification is given in the header of the file"
 
-$ cd  name_repository/client
-$ make
+$ g++ -std=c++11 -pthread name_code.cpp
 
 ```
 ---
-
-
 
 ### About the author
 
