@@ -14,6 +14,7 @@
 * Pipes           : Use of pipes and example for dividing a task
 * Sincronization Pipes : Sincronize two process using pipes
 * Threads         : Beautiful implementation threads 
+* Semaphores      : Implementation of semaphores
 
 
 ---
