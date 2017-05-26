@@ -1,6 +1,20 @@
 ***Usefull scripts in Operating Systems.***
 ---
 
+### Content
+
+* Assembler       : Execute code assembler in c++ 
+* Client Server   : Create architecture client-server in c++
+* Communicat      : Communicate two process: parallel task
+* File Projection : Make file projection of a file in memory
+* Memory          : Create script share memory 
+* mkfifo          : Use of named pipes writer and reader
+* Mutex           : Technique for controlling critic sections
+* Parallel tasks  : Example of parallel task in c++
+* Pipes           : Use of pipes and example for dividing a task
+* Sincronization Pipes : Sincronize two process using pipes
+* Threads         : Beautiful implementation threads 
+
 
 ---
 ### Requirements
