@@ -19,7 +19,11 @@ def plot(df):
     plt.plot(num_threads,speed_ups, 'rd', ms=5, label='Speed ups')
 
     for a,b in zip(num_threads,time):
-        plt.text(a, b, str(a))
+        plt.text(a, b, "%.2f" % b)
+        pass
+
+    for a,b in zip(num_threads,speed_ups):
+        plt.text(a, b, "%.2f" % b)
         pass
 
     plt.xlabel('X')  #Label
@@ -29,5 +33,5 @@ def plot(df):
 
 if __name__ == "__main__":
     name_file = 'times2.csv'
-    df = load(name_file, 20)
+    df = load(name_file, 100)
     plot(df)
