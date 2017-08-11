@@ -12,7 +12,7 @@ def plot(df):
     speed_ups = []
     best_time_seq = 7.98094
     for a in df["TIME"]:
-        speed_ups.append(a/best_time_seq)
+        speed_ups.append(best_time_seq/a)
 
     plt.plot(num_threads,time, 'b-', ms=1)
     plt.plot(num_threads,time, 'go', ms=5, label='Time')
