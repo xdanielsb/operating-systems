@@ -37,13 +37,6 @@ In case using threads use this code, "The specification is given in the header o
 $ g++ -std=c++11 -pthread name_code.cpp
 
 ```
----
-
-### About the author
-
-* Name : DANIEL FERNANDO SANTOS BUSTOS
-* Email : dfsantosbu@unal.edu.co
-* Description: Just a person that likes turning  magic  things in something  real .
 
 ---
 
